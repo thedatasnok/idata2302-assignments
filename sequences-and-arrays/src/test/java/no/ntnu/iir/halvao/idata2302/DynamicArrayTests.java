@@ -71,7 +71,7 @@ public class DynamicArrayTests {
     array.delete();
     array.insert(1);
     array.delete();
-    assertEquals(2, array.getCapacity());
+    assertEquals(2, array.getCapacity()); 
   }
 
   @Test
