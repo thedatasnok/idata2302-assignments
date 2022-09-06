@@ -33,9 +33,7 @@ public class DynamicArray {
    * @param element the element to insert at the end of the array
    */
   public void insert(int element) {
-    this.length++;
-
-    if (this.length == elements.length) {
+    if (this.length + 1 == elements.length) {
       this.capacity = this.capacity * 2;
       int[] intermediateArray = new int[this.capacity];
 
@@ -47,6 +45,7 @@ public class DynamicArray {
     }
 
     this.elements[this.length] = element;
+    this.length++;
   }
 
   /**

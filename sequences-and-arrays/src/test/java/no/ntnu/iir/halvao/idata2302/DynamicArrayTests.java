@@ -1,5 +1,6 @@
 package no.ntnu.iir.halvao.idata2302;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
@@ -51,6 +52,24 @@ public class DynamicArrayTests {
     assertEquals(3, array.getLength());
     array.delete();
     assertEquals(2, array.getLength());
+  }
+
+  @Test
+  void containsPassedIntegers() {
+    int constant = 12;
+    DynamicArray array = new DynamicArray(16);
+
+    for (int i = 0; i < constant; i++) {
+      array.insert(i);
+    }
+
+    int[] collected = new int[constant];
+
+    for (int i = 0; i < constant; i++) {
+      collected[i] = array.get(i);
+    }
+
+    assertArrayEquals(new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, collected);
   }
 
 }
