@@ -2,6 +2,7 @@ package no.ntnu.iir.halvao.idata2302;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 public class DynamicArrayTests {
@@ -52,6 +53,25 @@ public class DynamicArrayTests {
     assertEquals(3, array.getLength());
     array.delete();
     assertEquals(2, array.getLength());
+  }
+
+  @Test
+  void cannotDeletePastZeroLength() {
+    DynamicArray array = new DynamicArray(4);
+    assertThrows(IllegalStateException.class, () -> array.delete());
+    array.insert(10);
+    array.delete();
+    assertThrows(IllegalStateException.class, () -> array.delete());
+  }
+  
+  @Test
+  void capacityDoesNotDecreaseToZero() {
+    DynamicArray array = new DynamicArray(2);
+    array.insert(1);
+    array.delete();
+    array.insert(1);
+    array.delete();
+    assertEquals(2, array.getCapacity());
   }
 
   @Test
