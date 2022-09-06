@@ -15,6 +15,8 @@ public class DynamicArray {
    * @param capacity the starting capacity of the array
    */
   public DynamicArray(int capacity) {
+    if (capacity < 1) throw new IllegalArgumentException("Capacity must be greater than zero!");
+
     this.elements = new int[capacity];
     this.capacity = capacity;
     this.length = 0;
@@ -53,6 +55,8 @@ public class DynamicArray {
    * if the length is less than a fourth of the allocated size.
    */
   public void delete() {
+    if (this.length == 0) throw new IllegalStateException("Cannot delete from an empty array!");
+
     int[] intermediateArray;
 
     if (this.length <= elements.length / 4) {
