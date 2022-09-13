@@ -10,8 +10,8 @@
     <version>${revision}</version>
   </parent>
 
-  <artifactId>sequences-and-arrays</artifactId>
+  <artifactId>simple-sorting</artifactId>
   <version>${revision}</version>
-  <name>lab-assignments :: sequences-and-arrays</name>
+  <name>lab-assignments :: simple-sorting</name>
   
 </project>

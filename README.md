@@ -10,3 +10,7 @@ The entirety of this collection is used in an educational context, and should th
 
 - [Sequences and Arrays: Dynamic Arrays](sequences-and-arrays/)
 
+
+## Other work
+
+- [Simple sorting](simple-sorting/)
