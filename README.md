@@ -1,6 +1,6 @@
 # IDATA2302 Assignments
 
-This is a collection of assignments and lab exercises in the course IDATA2302 at NTNU.
+This is a collection of assignments and lab exercises in the course IDATA2302, Algorithms and Data Structures, at NTNU.
 
 
 The entirety of this collection is used in an educational context, and should therefore be taken with a grain of salt.
@@ -13,4 +13,5 @@ The entirety of this collection is used in an educational context, and should th
 
 ## Other work
 
-- [Simple sorting](simple-sorting/)
+- [Simple sorting: A collection of simple sorting algorithms](simple-sorting/)
+
