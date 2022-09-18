@@ -5,8 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class InsertionSortTests {
+class InsertionSortTests {
   
+  private static final List<Integer> EMPTY_LIST = List.of();
+
   @Test
   void sortsListCorrectly() {
     List<Integer> sorted = InsertionSort.sort(1, 3, 2, 8, 4, 6);
@@ -16,6 +18,6 @@ public class InsertionSortTests {
   @Test
   void cannotSortEmptyList() {
     assertThrows(IllegalArgumentException.class, () -> InsertionSort.sort());
-    assertThrows(IllegalArgumentException.class, () -> InsertionSort.sort(List.of()));
+    assertThrows(IllegalArgumentException.class, () -> InsertionSort.sort(EMPTY_LIST));
   }
 }

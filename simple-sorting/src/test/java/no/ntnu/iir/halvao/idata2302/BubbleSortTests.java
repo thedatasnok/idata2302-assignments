@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class BubbleSortTests {
+class BubbleSortTests {
+
+  private static final List<Integer> EMPTY_LIST = List.of();
 
   @Test
   void sortsListCorrectly() {
@@ -16,7 +18,7 @@ public class BubbleSortTests {
   @Test
   void cannotSortEmptyList() {
     assertThrows(IllegalArgumentException.class, () -> BubbleSort.sort());
-    assertThrows(IllegalArgumentException.class, () -> BubbleSort.sort(List.of()));
+    assertThrows(IllegalArgumentException.class, () -> BubbleSort.sort(EMPTY_LIST));
   }
 
 }
