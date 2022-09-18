@@ -27,18 +27,19 @@ public class InsertionSort {
   public static List<Integer> sort(List<Integer> numbers) {
     if (numbers.isEmpty()) throw new IllegalArgumentException("Cannot sort an empty list!");
 
-    List<Integer> unsorted = new ArrayList<>(numbers);
     List<Integer> sorted = new ArrayList<>();
 
-    while (sorted.size() != numbers.size()) {
-      int minimaIndex = 0;
+    for (int i = 0; i < numbers.size(); i++) {
+      int element = numbers.get(i);
+      int insertionIndex = sorted.size();
+      int j = 0;
 
-      for (int i = 0; i < unsorted.size(); i++) {
-        if (unsorted.get(i) < unsorted.get(minimaIndex)) minimaIndex = i;
+      while (j < sorted.size() && insertionIndex == sorted.size()) {
+        if (element < sorted.get(j)) insertionIndex = j;
+        j++;
       }
 
-      sorted.add(unsorted.get(minimaIndex));
-      unsorted.remove(unsorted.get(minimaIndex));
+      sorted.add(insertionIndex, element);
     }
 
     return sorted;
