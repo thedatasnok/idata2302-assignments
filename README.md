@@ -14,4 +14,4 @@ The entirety of this collection is used in an educational context, and should th
 ## Other work
 
 - [Simple sorting: A collection of simple sorting algorithms](simple-sorting/)
-
+- [Simple searching: A collection of simple searching algorithms](simple-searching/)

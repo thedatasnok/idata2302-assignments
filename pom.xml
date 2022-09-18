@@ -22,6 +22,7 @@
   <modules>
     <module>sequences-and-arrays</module>
     <module>simple-sorting</module>
+    <module>simple-searching</module>
   </modules>
 
   <dependencies>
