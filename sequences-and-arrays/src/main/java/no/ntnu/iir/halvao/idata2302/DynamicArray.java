@@ -87,6 +87,7 @@ public class DynamicArray {
 
     while (result == -1 && counter < this.elements.length) {
       if (this.elements[counter] == element) result = counter;
+      counter++;
     }
 
     return result;

@@ -2,6 +2,7 @@ package no.ntnu.iir.halvao.idata2302;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
@@ -90,6 +91,38 @@ public class DynamicArrayTests {
     }
 
     assertArrayEquals(new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, collected);
+  }
+
+  @Test
+  void lookupReturnsCorrectIndex() {
+    DynamicArray array = new DynamicArray();
+    array.insert(2);
+    array.insert(2);
+    array.insert(24);
+    array.insert(22);
+    array.insert(23);
+    array.insert(2);
+
+    assertEquals(0, array.lookup(2));
+    assertEquals(2, array.lookup(24));
+    assertEquals(4, array.lookup(23));
+    assertNotEquals(5, array.lookup(2));
+  }
+
+  @Test
+  void getReturnsLookedUpElement() {
+    DynamicArray array = new DynamicArray();
+    int elementToFind = 5;
+
+    array.insert(1);
+    array.insert(1);
+    array.insert(elementToFind);
+    array.insert(1);
+    array.insert(1);
+
+    int lookedUpIndex = array.lookup(elementToFind);
+    assertEquals(2, lookedUpIndex);
+    assertEquals(elementToFind, array.get(lookedUpIndex));
   }
 
 }
