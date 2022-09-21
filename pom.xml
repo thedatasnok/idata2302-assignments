@@ -21,6 +21,7 @@
 
   <modules>
     <module>sequences-and-arrays</module>
+    <module>simple-recursion</module>
     <module>simple-sorting</module>
     <module>simple-searching</module>
   </modules>
