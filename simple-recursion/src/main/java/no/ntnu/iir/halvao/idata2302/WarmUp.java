@@ -1,7 +1,5 @@
 package no.ntnu.iir.halvao.idata2302;
 
-import java.util.Arrays;
-
 public class WarmUp {
   
   private static final String[] CHARACTERS = {
@@ -22,7 +20,13 @@ public class WarmUp {
   public static int sum(int[] array) {
     if (array.length == 0) return 0;
     if (array.length == 1) return array[0];
-    return array[array.length - 1] + WarmUp.sum(Arrays.copyOfRange(array, 0, array.length - 1));
+    return WarmUp.doSum(array, 0);
+  }
+
+  private static int doSum(int[] array, int start) {
+    if (start >= array.length) return 0;
+
+    return array[start] + WarmUp.doSum(array, start + 1);
   }
 
   public static boolean isPalindrome(String text) {
