@@ -32,4 +32,17 @@ class MaxBinaryHeapTests {
     assertEquals(Collections.max(heap.listCopy()), heap.poll());
   }
 
+  @Test
+  void maximumIsBubbledDownOnExtraction() {
+    Heap<Integer> heap = new MaxBinaryHeap<>();
+    heap.insert(1);
+    heap.insert(2);
+    heap.insert(3);
+    heap.insert(4);
+
+    heap.poll();
+
+    assertEquals(3, heap.poll());
+  }
+
 }
