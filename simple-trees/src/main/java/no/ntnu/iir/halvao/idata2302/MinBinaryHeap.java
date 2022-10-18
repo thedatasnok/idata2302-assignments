@@ -6,14 +6,6 @@ public class MinBinaryHeap<T extends Comparable<T>> extends Heap<T> {
     super();
   }
 
-  public static void main(String[] args) {
-    Heap<Integer> heap = new MinBinaryHeap<>();
-    heap.insert(3);
-    heap.insert(2);
-    heap.insert(4);
-    heap.insert(1);
-  }
-
   @Override
   protected void bubbleUp(int nodeIndex) {
     int index = nodeIndex;

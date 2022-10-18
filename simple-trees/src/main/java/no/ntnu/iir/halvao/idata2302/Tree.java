@@ -1,7 +1,6 @@
 package no.ntnu.iir.halvao.idata2302;
 
 import java.util.ArrayDeque;
-import java.util.Stack;
 
 public class Tree {
   private Node root;
