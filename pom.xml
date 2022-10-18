@@ -20,6 +20,7 @@
   </properties>
 
   <modules>
+    <module>josephus-problem</module>
     <module>sequences-and-arrays</module>
     <module>simple-recursion</module>
     <module>simple-sorting</module>
