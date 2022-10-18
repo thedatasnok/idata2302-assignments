@@ -25,6 +25,7 @@
     <module>simple-recursion</module>
     <module>simple-sorting</module>
     <module>simple-searching</module>
+    <module>simple-trees</module>
   </modules>
 
   <dependencies>

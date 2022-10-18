@@ -9,6 +9,7 @@ The entirety of this collection is used in an educational context, and should th
 ## Mandatory work
 
 - [Sequences and Arrays: Dynamic Arrays](sequences-and-arrays/)
+- [Trees: Binary Search Trees, Heaps](simple-trees/)
 
 
 ## Other work
