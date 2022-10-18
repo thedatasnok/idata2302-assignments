@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Heap<T extends Comparable<T>> {
-  private final List<T> items;
+  protected final List<T> items;
 
   protected Heap() {
     this.items = new ArrayList<>();
@@ -45,14 +45,24 @@ public abstract class Heap<T extends Comparable<T>> {
    */
   public T poll() {
     this.swap(this.lastIndex(), 0);
-    T head = this.items.remove(this.items.size());
+    T head = this.items.remove(this.lastIndex());
     this.bubbleDown(0);
 
     return head;
   }
 
+  /**
+   * Bubbles down the element at a given index.
+   * 
+   * @param index the index to bubble down from
+   */
   protected abstract void bubbleDown(int index);
 
+  /**
+   * Bubbles up the element at a given index.
+   * 
+   * @param index the index to bubble up from
+   */
   protected abstract void bubbleUp(int index);
 
   /**
@@ -122,18 +132,34 @@ public abstract class Heap<T extends Comparable<T>> {
     return (parentIndex * 2) + 1;
   }
 
+  /**
+   * Checks if a parent index has a left child in the heap.
+   * 
+   * @param parentIndex the parent index to check if it has a left child
+   * 
+   * @return true if the parent index has a left child
+   */
   protected boolean hasLeftChild(int parentIndex) {
     return this.leftChildIndex(parentIndex) < this.items.size();
   }
 
+  /**
+   * Finds the left child element from a given parent index.
+   * 
+   * @param parentIndex the parent index to find the left child element from
+   * 
+   * @return the left child element
+   */
   protected T leftChild(int parentIndex) {
     return this.items.get(this.leftChildIndex(parentIndex));
   }
 
   /**
-   * Returns the 
-   * @param parentIndex
-   * @return
+   * Returns the index of the right child of a given parent index.
+   * 
+   * @param parentIndex the parent index to find the right child index for
+   * 
+   * @return the right child index of the given parent index
    */
   protected int rightChildIndex(int parentIndex) {
     return (parentIndex * 2) + 2;

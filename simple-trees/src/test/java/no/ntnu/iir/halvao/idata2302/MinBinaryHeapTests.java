@@ -3,13 +3,15 @@ package no.ntnu.iir.halvao.idata2302;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Collections;
+
 import org.junit.jupiter.api.Test;
 
 class MinBinaryHeapTests {
   
   @Test
   void canInsertToHeap() {
-    MinBinaryHeap<Integer> heap = new MinBinaryHeap<>();
+    Heap<Integer> heap = new MinBinaryHeap<>();
     heap.insert(1);
     heap.insert(2);
     heap.insert(3);
@@ -19,8 +21,21 @@ class MinBinaryHeapTests {
   }
 
   @Test
+  void minimumIsAtHead() {
+    Heap<Integer> heap = new MinBinaryHeap<>();
+
+    heap.insert(3);
+    heap.insert(2);
+    heap.insert(4);
+    heap.insert(1);
+
+    assertEquals(1, heap.listCopy().get(0));
+    assertEquals(Collections.min(heap.listCopy()), heap.poll());
+  }
+
+  @Test
   void isOrderedCorrectly() {
-    MinBinaryHeap<Integer> heap = new MinBinaryHeap<>();
+    Heap<Integer> heap = new MinBinaryHeap<>();
 
     heap.insert(2);
     heap.insert(3);
